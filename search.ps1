@@ -5,8 +5,8 @@ function cexSearch {
     $boxes = $cex.content | ConvertFrom-Json | select -expand response | select -expand data | select -expand boxes |
     select boxId, boxName, categoryFriendlyName, sellPrice, cashPrice, exchangePrice, outOfStock, outOfEcomStock, ecomQuantityOnHand
     return $boxes;
-    }
+}
 
-    $searchTerm = Read-Host -Prompt 'Search'
-    $boxes = cexSearch -searchTerm $searchTerm
-    $boxes[0..4]
+$searchTerm = Read-Host -Prompt 'Search'
+$boxes = cexSearch -searchTerm $searchTerm
+$boxes[0..4]
